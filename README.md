@@ -17,9 +17,13 @@ Negative and zero minimum differences are impossible since values cannot compare
 
 
 ## A naive solution in psuedo code
+### Runtime Complexity of O(n^2)
+### Space Complexity of O(1) if the user only needs 1 pair or less indexes 
 fn solution(arr){
    var maxValue = maxInt
-   var idxList = []
+   # I debate whether or not to include this feature in space complexity
+   # This feature is not needed in the algorithm for the solution
+   var idxList = [] 
    for( var i = 0; i < arr.length - 1; i++)
      for( var j = i + 1; i < arr.length - 1; j++)
         if( arr[i] > arr[j]){
@@ -36,8 +40,12 @@ fn solution(arr){
     return ( maxValue, idxList)
 }
 
-
-Proposal 1: Skip List
+## Solutions:
+### Proposal 1: Skip List
 Skip List as Linked List which has more meta data which allows binary searching.
 
 
+### Proposal 2:
+
+Rational:
+My first task was to create a naive solution to evaluate the worst time and space complexity of the problem. 
