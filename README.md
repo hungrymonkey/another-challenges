@@ -15,9 +15,11 @@ This problem has an upper bound of n! comparisons. Each iteration compares 1 les
 All comparions must by compared to any value on the right side
 Negative and zero minimum differences are impossible since values cannot compare to itself and a number larger than itself
 
+## Goal:
+Write an algorithm that is faster than O(n!) which is essentially n^n runtime
 
 ## A naive solution in psuedo code
-### Runtime Complexity of O(n^2)
+### Runtime Complexity of O(n!)
 ### Space Complexity of O(1) if the user only needs 1 pair or less indexes 
 fn solution(arr){
    var maxValue = maxInt
@@ -48,4 +50,4 @@ Skip List as Linked List which has more meta data which allows binary searching.
 ### Proposal 2:
 
 Rational:
-My first task was to create a naive solution to evaluate the worst time and space complexity of the problem. 
+My first task was to create a naive solution to evaluate the worst time and space complexity of the problem. This solution would be useful as a tester and a goal
