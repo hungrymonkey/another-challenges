@@ -49,6 +49,8 @@ Insert and neighbor lookup should be O(1) after the position is found.
 
 ### Proposal 2: BST
 
+Since this problem requires the node to see its parent, parent reference is needed.
+
 
 Future Considerations
 
