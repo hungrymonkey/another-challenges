@@ -51,3 +51,5 @@ Skip List as Linked List which has more meta data which allows binary searching.
 
 Rational:
 My first task was to create a naive solution to evaluate the worst time and space complexity of the problem. This solution would be useful as a tester and a goal
+
+I attempted to use hash maps as the solution since coding questions use them pretty often. A common question is to find two numbers which add up to a given sum.I soon realized value needs their ordered neighbors which requires some ability to sort the list.
