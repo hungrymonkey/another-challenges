@@ -47,9 +47,23 @@ fn solution(arr){
 Skip List as Linked List which has more meta data which allows binary searching.
 
 
-### Proposal 2:
 
-Rational:
+### Proposal 2: BST
+
+
+Future Considerations
+
+## Rational:
 My first task was to create a naive solution to evaluate the worst time and space complexity of the problem. This solution would be useful as a tester and a goal
 
-I attempted to use hash maps as the solution since coding questions use them pretty often. A common question is to find two numbers which add up to a given sum.I soon realized value needs their ordered neighbors which requires some ability to sort the list.
+I attempted to use hash maps as the solution since coding questions use them often. A common question is to find two numbers which add up to a given sum. I soon realized that the value needs their ordered neighbors which requires some ability to sort the list.
+
+Evaluting right to left requires me to build the whole tree then remove each element in order at a time. However, evaluting left to right allow me to slowly build the tree as I evaluate each element.
+
+This problem burdens two operations: insert and neighbor lookup. In an unrealistic scenerio, I can slowly build the assoriated array such that given this array [2,4,8]. I can binary search between 4 and 8 to grab the neighbors 5 and 8 while I insert 5 and memmove the entire right array. These operations meet the requirement for a data structure. A data structure is useful when the cost of building and maintaining outweighs the althernative algorithm.
+
+Since memmove huge chucks of memory operations are expensive, I thought about creating a linked list which requires arbitary inserts. Skiplist was brainstorm due to its ability to binary search and see its neighbors.
+
+In addition, I wonder about how a binary search tree organizes its neighbors. 
+
+
