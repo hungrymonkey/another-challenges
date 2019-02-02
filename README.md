@@ -8,4 +8,8 @@ You can only subtract from left to right (ex: you can't do 4 - 2 since that's go
 You can't subtract a number from itself (ex: 5 - 5)
 Result can't be negative (ex: 5 - 8)
 
+Problem space: This problem has an upper bound of n! comparisons. Each iteration compares 1 less value such that (n-1)(n-2)(n-3).... until (n-n+1).
+
+Constraints: All comparions must by compared to any value on the right side
+Negative and zero minimum differences are impossible since values cannot compare to itself and a number larger than itself
 
