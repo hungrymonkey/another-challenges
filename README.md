@@ -45,8 +45,7 @@ fn solution(arr){
 ## Solutions:
 ### Proposal 1: Skip List
 Skip List as Linked List which has more meta data which allows binary searching.
-
-
+Insert and neighbor lookup should be O(1) after the position is found.
 
 ### Proposal 2: BST
 
@@ -64,6 +63,4 @@ This problem burdens two operations: insert and neighbor lookup. In an unrealist
 
 Since memmove huge chucks of memory operations are expensive, I thought about creating a linked list which requires arbitary inserts. Skiplist was brainstorm due to its ability to binary search and see its neighbors.
 
-In addition, I wonder about how a binary search tree organizes its neighbors. 
-
-
+In addition, the BST has well defined structured. I can find closest neighbors given whether or not the node is a leaf or branch
