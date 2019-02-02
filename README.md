@@ -16,7 +16,7 @@ All comparions must by compared to any value on the right side
 Negative and zero minimum differences are impossible since values cannot compare to itself and a number larger than itself
 
 ## Goal:
-Write an algorithm that is faster than O(n!) which is essentially n^n runtime
+Write an algorithm that is faster than O(n!) which is similar to n^n runtime
 
 ## A naive solution in psuedo code
 ### Runtime Complexity of O(n!)
