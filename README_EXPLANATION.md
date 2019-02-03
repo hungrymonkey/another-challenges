@@ -69,7 +69,7 @@ Space: O(n) each element is only inserted once. In fact, the space might be lowe
 #### Implement delete and modify so I do not need to rebuild the whole tree whenever the user inputs anything
 
 ### Frontend
-#### Use Jison to test grammars and implement error message
+#### Use Jison to test grammars and implement error messages
 #### Create more visuals to help the user understand the result
 
 
