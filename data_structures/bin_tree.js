@@ -53,15 +53,33 @@ function BinarySearchTree(){
 BinarySearchTree.prototype.insert = function(val, idx){
   if( !this.root){
     this.root = new Node(val, idx);
-    return null;
+    return this.root;
   }
   var n = this.root;
   //insert value into tree
+  var leaf = new Node(val, idx);
+
+  //finish binary search the tree until empty position is found
   while( n ) {
-    
+    leaf.parent = n;
+    if( n.value > val) {
+      n = n.left;
+    } else {
+      if( n.value === val ){
+        n.indexList.push(idx);
+        return n;
+      } else {
+        n = n.right;
+      }
+    }
   }
-
-
+  //Use the set leaf to set the parent node.
+  if(leaf.parent.value > val){
+    leaf.parent.left = leaf;
+  } else {
+    leaf.parent.right = leaf;
+  }
+  return leaf;
 }
 
 BinarySearchTree.prototype.rbegin = function(){
