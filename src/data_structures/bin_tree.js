@@ -7,8 +7,11 @@ function Node( val, idx ) {
    this.left = null;
    this.right = null;
 }
+Node.prototype.getValue = function(){
+  return this.value;
+}
 //Iterator next
-Node.prototype.next() = function(){
+Node.prototype.next = function(){
   if( this.right ){
     var n = this.right;
     while(n.left) {
@@ -27,7 +30,7 @@ Node.prototype.next() = function(){
   }
 }
 //Reverse Iterator
-Node.prototype.rnext() = function(){
+Node.prototype.rnext = function(){
   if( this.left ){
     var n = this.left;
     while(n.right) {
