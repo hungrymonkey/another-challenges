@@ -58,13 +58,20 @@ BinarySearchTree.prototype.insert = function(val, idx){
   var n = this.root;
   //insert value into tree
   while( n ) {
-   
+    
   }
 
 
 }
 
-
+BinarySearchTree.prototype.rbegin = function(){
+  var n = this.root;
+  while( n ){
+    if( n.right === null)
+      return n;
+    n = n.right;
+  }
+}
 
 BinarySearchTree.prototype.begin = function(){
   var n = this.root;
