@@ -50,15 +50,20 @@ Node.prototype.rnext = function(){
 }
 
 function BinarySearchTree(){
-  this.root = null;
+  this.treeRoot = null;
+  this.isize = 0;
+}
+BinarySearchTree.prototype.size = function(){
+  return isize;
 }
 
 BinarySearchTree.prototype.insert = function(val, idx){
-  if( !this.root){
-    this.root = new Node(val, idx);
-    return this.root;
+  if( !this.treeRoot){
+    this.treeRoot = new Node(val, idx);
+    this.isize += 1;
+    return this.treeRoot;
   }
-  var n = this.root;
+  var n = this.treeRoot;
   //insert value into the tree
   var leaf = new Node(val, idx);
 
@@ -82,30 +87,33 @@ BinarySearchTree.prototype.insert = function(val, idx){
   } else {
     leaf.parent.right = leaf;
   }
+  this.isize += 1;
   return leaf;
 }
 
 BinarySearchTree.prototype.rbegin = function(){
-  var n = this.root;
+  var n = this.treeRoot;
   while( n ){
     if( n.right === null)
       return n;
     n = n.right;
   }
+  return null;
 }
 
 BinarySearchTree.prototype.begin = function(){
-  var n = this.root;
+  var n = this.treeRoot;
   while( n ){
     if( n.left === null)
       return n;
     n = n.left;
   }
+  return null;
 }
 
 (function(exports){
 
-  exports.BinaryTree = BinarySearchTree;
+  exports.BinarySearchTree = BinarySearchTree;
 
 }(typeof exports === 'undefined' ? this.BinaryTreeLib = {} : exports));
 
