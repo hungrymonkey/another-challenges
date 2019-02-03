@@ -20,7 +20,8 @@ function minimumDifference(arr)  {
             }
         }
     }
-    return [smallest, indexes]
+    //check if there is any result
+    return [smallest === Number.MAX_SAFE_INTEGER? -1 : smallest, indexes]
 }
 
 
