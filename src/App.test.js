@@ -77,6 +77,13 @@ it("Sample test", () => {
   expect(diff).toBe(1);
 });
 
+it("Sample negative", () => {
+  var sample =  [ -1, -5, 10, 1, 2 ];
+  var [diff, indexes] = MinimumDifference.MinimumDifference(sample)
+  expect(diff).toBe(4);
+});
+
+
 it('renders without crashing', () => {
   const div = document.createElement('div');
   ReactDOM.render(<App />, div);
