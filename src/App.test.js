@@ -2,12 +2,29 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 
-import BinaryTree from './data_structures/bin_tree';
+import BinaryTreeLib from './data_structures/bin_tree';
 
-it("keep the array in order", () => {
+it("check empty BST", () => {
+  var BST = new BinaryTreeLib.BinarySearchTree();
+  
+  expect(BST.size()).toBe( 0);
+});
+
+it("check if correct amount inserted", () => {
+  var BST = new BinaryTreeLib.BinarySearchTree();
   var arr = [0, 1, 1, 2, 3, 4, 5, 6, 7]
   var answer = [0, 1, 2, 3, 4, 5, 5, 6, 7];
-  var BST = BinaryTree.BinaryTree();
+  arr.forEach(function(val, idx) {
+    BST.insert(val, idx);
+  })
+  
+  expect(BST.size()).toBe( answer.length);
+});
+
+it("keep the array in order", () => {
+  var BST = new BinaryTreeLib.BinarySearchTree();
+  var arr = [0, 1, 1, 2, 3, 4, 5, 6, 7]
+  var answer = [0, 1, 2, 3, 4, 5, 5, 6, 7];
   arr.forEach(function(val, idx) {
     BST.insert(val, idx);
   })
@@ -16,7 +33,7 @@ it("keep the array in order", () => {
   while(n) {
     output.push(n.getValue());
   }
-  expect(output, answer);
+  expect(output).toBe( answer);
 });
 
 
