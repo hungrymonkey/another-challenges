@@ -6,11 +6,11 @@ This project is structure such that
 src/ - contains all the source code
 src/data_structures/ - contains most of the solution algorithm
 src/App.js - is the homepage
-src/App.test.js contains a few test to validate the result
+src/App.test.js contains a few tests to validate the result
 README_EXPLANATION.md - contains majority of the technical information
 ```
 
-For your convience, I create a Dockerfile and two scripts for the reactjs app
+For your convience, I created a Dockerfile and two scripts for the reactjs app
 
 Depends: Docker
 ```

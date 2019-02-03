@@ -9,21 +9,20 @@ You can't subtract a number from itself (ex: 5 - 5)
 Result can't be negative (ex: 5 - 8)
 
 All comparions must by compared to any value on the right side
-Negative and zero minimum differences are impossible since values cannot compare to itself and a number larger than itself
-
+Negative and zero minimum differences are impossible since values cannot compare a number larger than itself.
 
 ## Size of Problem space:
 This problem has an upper bound of n! comparisons. Each iteration compares 1 less value such that (n-1)(n-2)(n-3).... until (n-n+1).
 
 ## Goal:
-Write an algorithm that is faster than O(n!) which is similar to n^n runtime
+Write an algorithm that is faster than O(n!) with a reasonable amount of space used.
 
 ## A naive solution in psuedo code
 ### Runtime Complexity of O(n!)
 ### Space Complexity of O(1) if the user only needs 1 pair or less indexes 
 ```
 fn solution(arr){
-   var maxValue = maxInt
+   var minDiff = minDifference;
    # I debate whether or not to include this feature in space complexity
    # This feature is not needed in the algorithm for the solution
    var idxList = [] 
@@ -31,25 +30,25 @@ fn solution(arr){
      for( var j = i + 1; i < arr.length - 1; j++)
         if( arr[i] > arr[j]){
             var d = arr[i] - arr[j];
-            if (d == maxValue){
-               idxList.append( (i,j))  
+            if (d == minDiff){
+               idxList.minDiff( (i,j))  
             } else {
-              if( d < maxValue){
-                 maxValue = d
+              if( d < minDiff){
+                 minDiff = d
                  idxList = [(i,j)]
               }
             }
         }
-    return ( maxValue, idxList)
+    return ( minDiff, idxList)
 }
 ```
 ## Solutions:
 ### Proposal 1: Skip List
-Skip List is a Linked List with more meta data which allows binary searching.
+Skip List is a Linked List with extra metadata for binary searching.
 Insert and neighbor lookup should be O(1) after the position is found.
 
 Runtime: O(nlogn) Each element requires O(logn) time to complete
-Space: O(n) to O(nlogn) The space complexity is determined on how the binary search levels are made
+Space: O(n) to O(nlogn) The space complexity is determined on how the binary search levels are implemented.
 
 ### Proposal 2: BST
 
@@ -62,10 +61,10 @@ Space: O(n) each element is only inserted once. In fact, the space might be lowe
 
 ## Future Considerations
 
-
 ### Performance
 
 #### Proper Floyd heap sort https://en.wikipedia.org/wiki/Binary_heap#Building_a_heap
+#### Implement and test skip lists
 #### Implement delete and modify so I do not need to rebuild the whole tree whenever the user inputs anything
 
 ### Frontend
@@ -80,10 +79,10 @@ I attempted to use hash maps as the solution since coding questions use them oft
 
 Evaluting right to left requires me to build the whole tree then remove each element in order at a time. However, evaluting left to right allow me to slowly build the tree as I evaluate each element.
 
-This problem overuses two operations: insert and neighbor lookup. In an unrealistic scenerio, I can slowly build the assoriated array such that given this array [2,4,8]. I can binary search between 4 and 8 to grab the neighbors 5 and 8 while I insert 5 and memmove the entire right array. Since I cannot memove the rest of the array, I need a way to shift data quickly. This criteria meets the prerequistes for a data structure. For a data structure to be useful, the cost of building and maintaining it is less than the alternative.
+This problem overuses two operations: insert and neighbor lookup. In an unrealistic scenerio, I can slowly build the assoriated array such that given this array [2,4,8]. I can binary search between 4 and 8 to insert 5. Since memove is slow, I need a way to shift data quickly. The benefits of a data structure may outweigh the build and use cost.
 
 Since memmove huge chucks of memory operations are expensive, I thought about creating a linked list which requires arbitary inserts. Skiplist was brainstorm due to its ability to binary search and see its neighbors.
 
 In addition, the BST has well defined structured. I can find closest neighbors given whether or not the node is a leaf or branch
 
-I decided to create a single page application because Jeff wanted me to format my solution as presentable to the client. Since I am applying for a Reactjs development job, I choose to make a pure Reactjs application.
+I decided to create a single page application because Jeff wanted me to format my solution as presentable to the client. Since I am applying for a Reactjs development job, I created pure Reactjs application.
