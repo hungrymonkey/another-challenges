@@ -48,14 +48,30 @@ fn solution(arr){
 Skip List is a Linked List with more meta data which allows binary searching.
 Insert and neighbor lookup should be O(1) after the position is found.
 
+Runtime: O(nlogn) Each element requires O(logn) time to complete
+Space: O(n) to O(nlogn) The space complexity is determined on how the binary search levels are made
+
 ### Proposal 2: BST
 
+Implementing a normal BST walk can find its neighbors. I should use a BSTIterator.
 Since this problem requires the node to see its parent, parent reference is needed.
 
+Runtime: O(nlogn) Each element requires O(logn) time to complete
+Space: O(n) each element is only inserted once. In fact, the space might be lower than n when there are duplicates
 
-Future Considerations
 
-## Proper Floyd heap sort https://en.wikipedia.org/wiki/Binary_heap#Building_a_heap
+## Future Considerations
+
+
+### Performance
+
+#### Proper Floyd heap sort https://en.wikipedia.org/wiki/Binary_heap#Building_a_heap
+#### Implement delete and modify so I do not need to rebuild the whole tree whenever the user inputs anything
+
+### Frontend
+#### Use Jison to test grammars and implement error message
+#### Create more visuals to help the user understand the result
+
 
 ## Rational:
 My first task was to create a naive solution to evaluate the worst time and space complexity of the problem. This solution would be useful as a tester and worse case algorithm.
@@ -69,3 +85,5 @@ This problem overuses two operations: insert and neighbor lookup. In an unrealis
 Since memmove huge chucks of memory operations are expensive, I thought about creating a linked list which requires arbitary inserts. Skiplist was brainstorm due to its ability to binary search and see its neighbors.
 
 In addition, the BST has well defined structured. I can find closest neighbors given whether or not the node is a leaf or branch
+
+I decided to create a single page application because Jeff wanted me to format my solution as presentable to the client. Since I am applying for a Reactjs development job, I choose to make a pure Reactjs application.
