@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import TextField from '@material-ui/core/TextField';
+import { withStyles } from '@material-ui/core/styles';
+
 
 class App extends Component {
 
@@ -21,9 +23,16 @@ class App extends Component {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
-            Please enter numbers seperated by commas only
+            This SPA solves minimum difference between numbers in an list
           </p>
-          <TextField onChange={this.handleOnChange.bind(this)}/>
+          <TextField 
+            onChange={this.handleOnChange.bind(this)}
+            variant="filled"
+            autoFocus
+            placeholder="Please enter numbers seperated by commas only"
+            margin="normal"
+            inputProps={{ style: {  background: 'white', width: '600px'}}}
+          />
         </header>
       </div>
     );
