@@ -4,6 +4,9 @@ import './App.css';
 import Input from '@material-ui/core/Input';
 import { withStyles } from '@material-ui/core/styles';
 
+import MinimumDifference from './data_structures/minimum_difference'; 
+
+
 
 class App extends Component {
 
@@ -17,7 +20,22 @@ class App extends Component {
     this.setState({value: event.target.value});
   }
 
+  handleInput = function(input) {
+    //Validate input
+    
+    var arr = input.split(',').map((tok) => parseInt(tok));
+    console.log( MinimumDifference.MinimumDifference(arr));
+    var [diff, indexes] = MinimumDifference.MinimumDifference(arr);
+    if(diff < 0)
+      return [];
+    else 
+      return [diff, indexes];
+  }
+
   render() {
+    const output = this.handleInput(this.state.value);
+    const errorFlag = output.length === 0;
+    const [diff, idx] = output;
     return (
       <div className="App">
         <header className="App-header">
@@ -35,9 +53,20 @@ class App extends Component {
               background: 'white', 
               width: '600px', display: 'flex',
               height: '30px',
+              error: errorFlag,
               paddingLeft: '10px'
             }}}
           />
+          {!errorFlag ? 
+            <p>
+              Minimum Difference is {diff}
+            </p>
+            :
+            <p>
+              No Valid Minimum Difference
+            </p>
+          }
+          
         </header>
       </div>
     );
