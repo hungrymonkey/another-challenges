@@ -13,7 +13,7 @@ it("check empty BST", () => {
 it("check if correct amount inserted", () => {
   var BST = new BinaryTreeLib.BinarySearchTree();
   var arr = [0, 1, 1, 2, 3, 4, 5, 6, 7]
-  var answer = [0, 1, 2, 3, 4, 5, 5, 6, 7];
+  var answer = [0, 1, 2, 3, 4, 5, 6, 7];
   arr.forEach(function(val, idx) {
     BST.insert(val, idx);
   })
@@ -28,12 +28,14 @@ it("keep the array in order", () => {
   arr.forEach(function(val, idx) {
     BST.insert(val, idx);
   })
-  var n = BST.next();
+  var n = BST.begin();
+    
   var output = []
   while(n) {
     output.push(n.getValue());
+    n = n.next();
   }
-  expect(output).toBe( answer);
+  expect(output).toEqual(expect.arrayContaining( answer));
 });
 
 
