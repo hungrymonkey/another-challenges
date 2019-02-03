@@ -7,7 +7,7 @@ function Node( val, idx ) {
    this.left = null;
    this.right = null;
 }
-
+//Iterator next
 Node.prototype.next() = function(){
   if( this.right ){
     var n = this.right;
@@ -19,6 +19,25 @@ Node.prototype.next() = function(){
     var n = this.parent;
     while(n){
       if( this.value < n.value){
+        break;
+      }
+      n = n.parent;
+    }
+    return n;
+  }
+}
+//Reverse Iterator
+Node.prototype.rnext() = function(){
+  if( this.left ){
+    var n = this.left;
+    while(n.right) {
+      n = n.right;
+    }
+    return n;
+  } else {
+    var n = this.parent;
+    while(n){
+      if( this.value > n.value){
         break;
       }
       n = n.parent;
