@@ -55,6 +55,8 @@ Since this problem requires the node to see its parent, parent reference is need
 
 Future Considerations
 
+## Proper Floyd heap sort https://en.wikipedia.org/wiki/Binary_heap#Building_a_heap
+
 ## Rational:
 My first task was to create a naive solution to evaluate the worst time and space complexity of the problem. This solution would be useful as a tester and a goal
 
