@@ -38,6 +38,23 @@ it("keep the array in order", () => {
   expect(output).toEqual(expect.arrayContaining( answer));
 });
 
+it("sort with duplicates", () => {
+  var BST = new BinaryTreeLib.BinarySearchTree();
+  var arr = [0, 1, 1, 3, 7, 6]
+  var answer = [0, 1, 3, 6, 7];
+  arr.forEach(function(val, idx) {
+    BST.insert(val, idx);
+  })
+  var n = BST.begin();
+    
+  var output = []
+  while(n) {
+    output.push(n.getValue());
+    n = n.next();
+  }
+  expect(output).toEqual(expect.arrayContaining( answer));
+});
+
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
