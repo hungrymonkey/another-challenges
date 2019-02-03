@@ -56,10 +56,10 @@ BinarySearchTree.prototype.insert = function(val, idx){
     return this.root;
   }
   var n = this.root;
-  //insert value into tree
+  //insert value into the tree
   var leaf = new Node(val, idx);
 
-  //finish binary search the tree until empty position is found
+  //finish binary search until empty position is found
   while( n ) {
     leaf.parent = n;
     if( n.value > val) {
