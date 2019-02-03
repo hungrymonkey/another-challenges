@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import TextField from '@material-ui/core/TextField';
+import Input from '@material-ui/core/Input';
 import { withStyles } from '@material-ui/core/styles';
 
 
@@ -25,13 +25,18 @@ class App extends Component {
           <p>
             This SPA solves minimum difference between numbers in an list
           </p>
-          <TextField 
+          <Input 
             onChange={this.handleOnChange.bind(this)}
-            variant="filled"
+            variant="outlined"
             autoFocus
             placeholder="Please enter numbers seperated by commas only"
             margin="normal"
-            inputProps={{ style: {  background: 'white', width: '600px'}}}
+            inputProps={{ style: {  
+              background: 'white', 
+              width: '600px', display: 'flex',
+              height: '30px',
+              paddingLeft: '10px'
+            }}}
           />
         </header>
       </div>
