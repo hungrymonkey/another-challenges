@@ -53,7 +53,6 @@ class App extends Component {
               background: 'white', 
               width: '600px', display: 'flex',
               height: '30px',
-              error: errorFlag,
               paddingLeft: '10px'
             }}}
           />
