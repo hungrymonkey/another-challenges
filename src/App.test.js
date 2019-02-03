@@ -21,6 +21,22 @@ it("check if correct amount inserted", () => {
   expect(BST.size()).toBe( answer.length);
 });
 
+it("Sample test", () => {
+  var sample =  [ 5, 8, 2, 4 ];
+  var answer = [ 2,4,5,8]
+  var BST = new BinaryTreeLib.BinarySearchTree();
+  sample.forEach(function(val, idx) {
+    BST.insert(val, idx);
+  })
+  var n = BST.rbegin();
+  var output = []
+  while(n) {
+    output.push(n.getValue());
+    n = n.rnext();
+  }
+  expect(output).toEqual(expect.arrayContaining( answer));
+});
+
 it("keep the array in order", () => {
   var BST = new BinaryTreeLib.BinarySearchTree();
   var arr = [0, 1, 1, 2, 3, 4, 5, 6, 7]
