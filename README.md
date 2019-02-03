@@ -21,6 +21,7 @@ Write an algorithm that is faster than O(n!) which is similar to n^n runtime
 ## A naive solution in psuedo code
 ### Runtime Complexity of O(n!)
 ### Space Complexity of O(1) if the user only needs 1 pair or less indexes 
+```
 fn solution(arr){
    var maxValue = maxInt
    # I debate whether or not to include this feature in space complexity
@@ -41,7 +42,7 @@ fn solution(arr){
         }
     return ( maxValue, idxList)
 }
-
+```
 ## Solutions:
 ### Proposal 1: Skip List
 Skip List as Linked List which has more meta data which allows binary searching.
