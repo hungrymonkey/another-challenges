@@ -6,10 +6,10 @@ function Node( val, idx ) {
    this.parent = null;
    this.left = null;
    this.right = null;
-}
+};
 Node.prototype.getValue = function(){
   return this.value;
-}
+};
 //Iterator next
 Node.prototype.next = function(){
   if( this.right ){
@@ -28,7 +28,7 @@ Node.prototype.next = function(){
     }
     return n;
   }
-}
+};
 //Reverse Iterator
 Node.prototype.rnext = function(){
   if( this.left ){
@@ -47,15 +47,35 @@ Node.prototype.rnext = function(){
     }
     return n;
   }
-}
+};
 
 function BinarySearchTree(){
   this.treeRoot = null;
   this.isize = 0;
-}
+};
 BinarySearchTree.prototype.size = function(){
-  return isize;
-}
+  return this.isize;
+};
+
+BinarySearchTree.prototype.rbegin = function() {
+  var n = this.treeRoot;
+  while( n ){
+    if( n.right === null)
+      return n;
+    n = n.right;
+  }
+  return null;
+};
+
+BinarySearchTree.prototype.begin = function() {
+  var n = this.treeRoot;
+  while( n ){
+    if( n.left === null)
+      return n;
+    n = n.left;
+  }
+  return null;
+};
 
 BinarySearchTree.prototype.insert = function(val, idx){
   if( !this.treeRoot){
@@ -89,27 +109,9 @@ BinarySearchTree.prototype.insert = function(val, idx){
   }
   this.isize += 1;
   return leaf;
-}
+};
 
-BinarySearchTree.prototype.rbegin = function(){
-  var n = this.treeRoot;
-  while( n ){
-    if( n.right === null)
-      return n;
-    n = n.right;
-  }
-  return null;
-}
 
-BinarySearchTree.prototype.begin = function(){
-  var n = this.treeRoot;
-  while( n ){
-    if( n.left === null)
-      return n;
-    n = n.left;
-  }
-  return null;
-}
 
 (function(exports){
 
