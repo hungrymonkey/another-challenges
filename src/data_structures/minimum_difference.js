@@ -1,8 +1,29 @@
 "use strict";
 if ( typeof require === "function"){
-   var BinaryTree = require('./bin_tree.js').Queue;
+   var BinaryTree = require('./bin_tree.js').BinarySearchTree;
 }
 
-var minimumDifference = function(arr) {
-	
+function minimumDifference(arr)  {
+    var BST = new BinaryTree();
+    BST.insert(arr[arr.legnth-1], arr.length-1)
+    var smallest = Number.MAX_SAFE_INTEGER;
+    var indexes = [];
+	for(var i = arr.length-1; i != 0; i--){
+        var idx = i-1;
+        var n = BST.insert(arr[idx], idx);
+        var neighbor = n.rnext();
+        if( neighbor) {
+            if(smallest > ( n.getValue() - neighbor.getValue())){
+                smallest = n.getValue() - neighbor.getValue()
+                indexes = neighbor.getIndexes().map(( value ) => (idx, value))
+            }
+        }
+    }
+    return [smallest, indexes]
 }
+
+
+(function(exports){
+    exports.MinimumDifference = minimumDifference;
+  }(typeof exports === 'undefined' ? this.MinimumDifferenceLib = {} : exports));
+  

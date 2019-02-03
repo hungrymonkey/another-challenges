@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import App from './App';
 
 import BinaryTreeLib from './data_structures/bin_tree';
-
+import MinimumDifference from './data_structures/minimum_difference';
 it("check empty BST", () => {
   var BST = new BinaryTreeLib.BinarySearchTree();
   
@@ -55,6 +55,11 @@ it("sort with duplicates", () => {
   expect(output).toEqual(expect.arrayContaining( answer));
 });
 
+it("Sample test", () => {
+  var sample =  [ 5, 8, 2, 4 ];
+  var [diff, indexes] = MinimumDifference.MinimumDifference(sample)
+  expect(diff).toBe(1);
+});
 
 it('renders without crashing', () => {
   const div = document.createElement('div');

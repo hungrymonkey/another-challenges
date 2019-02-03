@@ -49,7 +49,7 @@ Node.prototype.rnext = function(){
   }
 };
 Node.prototype.getIndexes = function(){
-  return this.indexList.map((obj) => obj.clone())
+  return this.indexList.map((obj) => obj.clone)
 }
 function BinarySearchTree(){
   this.treeRoot = null;
