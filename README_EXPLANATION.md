@@ -88,5 +88,5 @@ BST: BST can be walked in either order. Inserts have a reasonable log n time. Th
 
 SPA-ReactJS: This assignment has a criteria of being presented to a client rather than an academic or a manager.
 Clients want observable testable demos. I applied to a Reactjs job.
-If this challenge was presented to an academic, I would need to test and write to achieve some rigor. My test cases would be more comprehensive and documented as unique with little deplication. 
+If this challenge was presented to an academic, I would need to achieve some type of rigor. My test cases would be more comprehensive and documented as unique with little deplication. 
 If this challenge was presented to a manager, the code would have a better overview and become more shareable for the rest of the team.
