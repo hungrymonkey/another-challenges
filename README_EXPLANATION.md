@@ -80,7 +80,7 @@ Evaluate the Array in reverse:
 The tree needs need to be built and remove one by one when the array is evaluated right to left.
 However, each element is evaluated as the tree is built right to left which removes uncessary deletes
 
-Data Structure: This problem overuses two operations: insert and neighbor lookup. In an unrealistic scenerio, this problem requires arbitary inserts in the middle of the array. Since memove is slow, this problem requires cheap inserts and neighbor transversal.
+Data Structure: This problem overuses two operations: insert and neighbor lookup. In an unrealistic scenerio, this problem requires arbitary inserts in the middle of the array. Since memove is slow, a data structure can provide cheap inserts and neighbor transversal.
 
 Skip List: Since memmove huge chucks of memory operations are expensive, LinkedList have O(1) inserts. However, linkedlist needs to be traversed linearly. A Skip List is essentially a binary searched linkedlist.
 
