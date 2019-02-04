@@ -48,7 +48,6 @@ class App extends Component {
             variant="outlined"
             autoFocus
             placeholder="Please enter numbers seperated by commas only"
-            margin="normal"
             inputProps={{ style: {  
               background: 'white', 
               width: '600px', display: 'flex',
