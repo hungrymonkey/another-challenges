@@ -83,6 +83,12 @@ it("Sample negative", () => {
   expect(diff).toBe(4);
 });
 
+it("Sample negative with positibe duplicates", () => {
+  var sample =  [ -1, -5, 1, 1, 2 ];
+  var [diff, indexes] = MinimumDifference.MinimumDifference(sample)
+  expect(diff).toBe(4);
+});
+
 
 it('renders without crashing', () => {
   const div = document.createElement('div');

@@ -43,17 +43,16 @@ fn solution(arr){
 }
 ```
 ## Solutions:
-### Proposal 1: Skip List
-SkipList is a LinkedList with extra metadata for binary searching.
-Insert and neighbor lookup should be O(1) after the position is found.
+### Proposal 1: Skip List - Not Implemented
+* SkipList is a LinkedList with extra metadata for binary searching.
+* Insert and neighbor lookup should be O(1) after the position is found.
 
 Runtime: O(nlogn) Each element requires O(logn) time to complete
 Space: O(n) to O(nlogn) The space complexity is determined on how the binary search levels are implemented.
 
-### Proposal 2: BST
-
-Implementing a normal BST walk can find its neighbors. I should use a BSTIterator.
-Since this problem requires the node to see its parent, parent reference is needed.
+### Proposal 2: BST - Implemented
+* BST tree can walk to its neighbor and its nodes are sorted by nature.
+* Since this problem requires a node walk, children nodes must see their parents.
 
 Runtime: O(nlogn) Each element requires O(logn) time to complete
 Space: O(n) each element is only inserted once. In fact, the space might be lower than n when there are duplicates
@@ -63,21 +62,23 @@ Space: O(n) each element is only inserted once. In fact, the space might be lowe
 
 ### Performance
 
-#### Proper Floyd heap sort https://en.wikipedia.org/wiki/Binary_heap#Building_a_heap
-#### Implement and test skip lists
-#### Implement delete and modify so I do not need to rebuild the whole tree whenever the user inputs anything
+* Proper Floyd heap sort https://en.wikipedia.org/wiki/Binary_heap#Building_a_heap
+* Implement and test skip lists
+* Implement delete and modify so the whole tree does not need to be rebuilt.
 
 ### Frontend
-#### Use Jison to test grammars and implement error messages
-#### Create more visuals to help the user understand the result
+* Use Jison to test grammars and implement error messages
+* Create more visuals results.
 
 
-## Rational:
+## Rationale:
 Naive Solution: A native solution can be used as a reference as the absolute floor of runtime performance.
 
 Giving up Hashmaps: Coding test abused hash maps often. This problem needs to see each elements sorted neighbor from an unsorted list. Hashmaps do not sort arrays which eliminates this data structure.
 
-Evaluate the Array in reverse: Evaluting right to left requires me to build the whole tree then remove each element in order at a time. However, evaluting left to right allow me to slowly build the tree as I evaluate each element.
+Evaluate the Array in reverse: 
+The tree needs need to be built and remove one by one when the array is evaluated right to left.
+However, each element is evaluated as the tree is built right to left which removes uncessary deletes
 
 Data Structure: This problem overuses two operations: insert and neighbor lookup. In an unrealistic scenerio, this problem requires arbitary inserts in the middle of the array. Since memove is slow, this problem needs a way to have cheap inserts and neighbor transversal.
 
@@ -86,6 +87,6 @@ Skip List: Since memmove huge chucks of memory operations are expensive, LinkedL
 BST: BST can be walked in either order. Inserts have a reasonable log n time.
 
 SPA-ReactJS: This assignment has a criteria of being presented to a client rather than an academic or manager.
-Clients want observable testable demos. I believe a reactjs help present my progress.
-If this challenge was presented to an academic, I need to test and write about every angle about this problem. My test cases would be more comprehensive and documented as unique with little deplication. 
-If this challenge was presented to a manager, I need to write ETA and todo list.
+Clients want observable testable demos. I believe a reactjs help present this project.
+If this challenge was presented to an academic, I would need to test and write about every angle about this problem. My test cases would be more comprehensive and documented as unique with little deplication. 
+If this challenge was presented to a manager, I would need to write ETA and todo list.

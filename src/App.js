@@ -41,7 +41,7 @@ class App extends Component {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
-            This SPA solves minimum difference between numbers in an list
+            This SPA solves minimum difference between numbers in a list
           </p>
           <Input 
             onChange={this.handleOnChange.bind(this)}
