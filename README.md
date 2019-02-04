@@ -1,6 +1,6 @@
 # Challenge 1
 
-This project is structure such that
+This project is structured such that
 
 ```
 src/ - contains all the source code
