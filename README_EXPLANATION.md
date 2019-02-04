@@ -44,7 +44,7 @@ fn solution(arr){
 ```
 ## Solutions:
 ### Proposal 1: Skip List
-Skip List is a Linked List with extra metadata for binary searching.
+SkipList is a LinkedList with extra metadata for binary searching.
 Insert and neighbor lookup should be O(1) after the position is found.
 
 Runtime: O(nlogn) Each element requires O(logn) time to complete
@@ -73,16 +73,19 @@ Space: O(n) each element is only inserted once. In fact, the space might be lowe
 
 
 ## Rational:
-My first task was to create a naive solution to evaluate the worst time and space complexity of the problem. This solution would be useful as a tester and worse case algorithm.
+Naive Solution: A native solution can be used as a reference as the absolute floor of runtime performance.
 
-I attempted to use hash maps as the solution since coding questions use them often. A common challenge is to find two numbers which add up to a given sum. I soon realized that the minimum value difference needs their nexted ordered neighbor which requires some ability to sort the list.
+Giving up Hashmaps: Coding test abused hash maps often. This problem needs to see each elements sorted neighbor from an unsorted list. Hashmaps do not sort arrays which eliminates this data structure.
 
-Evaluting right to left requires me to build the whole tree then remove each element in order at a time. However, evaluting left to right allow me to slowly build the tree as I evaluate each element.
+Evaluate the Array in reverse: Evaluting right to left requires me to build the whole tree then remove each element in order at a time. However, evaluting left to right allow me to slowly build the tree as I evaluate each element.
 
-This problem overuses two operations: insert and neighbor lookup. In an unrealistic scenerio, I can slowly build the assoriated array such that given this array [2,4,8]. I can binary search between 4 and 8 to insert 5. Since memove is slow, I need a way to shift data quickly. The benefits of a data structure may outweigh the build and use cost.
+Data Structure: This problem overuses two operations: insert and neighbor lookup. In an unrealistic scenerio, this problem requires arbitary inserts in the middle of the array. Since memove is slow, this problem needs a way to have cheap inserts and neighbor transversal.
 
-Since memmove huge chucks of memory operations are expensive, I thought about creating a linked list which requires arbitary inserts. Skiplist was brainstorm due to its ability to binary search and see its neighbors.
+Skip List: Since memmove huge chucks of memory operations are expensive, LinkedList have O(1) inserts. However, linkedlist needs to be traversed linearly. A Skip List is essentially a binary searched linkedlist.
 
-In addition, the BST has well defined structured. I can find closest neighbors given whether or not the node is a leaf or branch
+BST: BST can be walked in either order. Inserts have a reasonable log n time.
 
-I decided to create a single page application because Jeff wanted me to format my solution as presentable to the client. Since I am applying for a Reactjs development job, I created pure Reactjs application.
+SPA-ReactJS: This assignment has a criteria of being presented to a client rather than an academic or manager.
+Clients want observable testable demos. I believe a reactjs help present my progress.
+If this challenge was presented to an academic, I need to test and write about every angle about this problem. My test cases would be more comprehensive and documented as unique with little deplication. 
+If this challenge was presented to a manager, I need to write ETA and todo list.
