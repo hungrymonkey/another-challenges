@@ -78,7 +78,7 @@ Giving up Hashmaps: Coding test abused hash maps often. This problem needs to se
 
 Evaluate the Array in reverse: 
 The tree needs need to be built and remove one by one when the array is evaluated right to left.
-However, each element is evaluated as the tree is built right to left which removes uncessary deletes
+However, each element is evaluated as the tree is built right to left which removes unnecessary deletes
 
 Data Structure: This problem overuses two operations: insert and neighbor lookup. In an unrealistic scenerio, this problem requires arbitary inserts in the middle of the array. Since memove is slow, a data structure can provide cheap inserts and neighbor transversal.
 
