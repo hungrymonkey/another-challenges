@@ -82,7 +82,7 @@ However, each element is evaluated as the tree is built right to left which remo
 
 Data Structure: This problem overuses two operations: insert and neighbor lookup. In an unrealistic scenerio, this problem requires arbitary inserts in the middle of the array. Since memove is slow, a data structure can provide cheap inserts and neighbor transversal.
 
-Skip List: Since memmove is expensive for moving huge chucks of memmory, LinkedList has O(1) inserts. Neverless, linkedlist needs to be traversed linearly. LinkedList needs to be O(nlogn) or faster. A Skip List is essentially a binary searched linkedlist.
+Skip List: Since memmove is expensive for moving huge chucks of memmory, LinkedList has O(1) inserts. Neverless, linkedlist needs to be traversed linearly. LinkedList needs to be O(logn) or faster to have an overall performance of O(nlogn). A Skip List is essentially a binary searched linkedlist.
 
 BST: BST can be walked in either order. Inserts have a reasonable log n time. Therefore, time complexity is more likely O(nlogn).
 
