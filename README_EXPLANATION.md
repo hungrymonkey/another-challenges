@@ -12,13 +12,13 @@ All comparions must by compared to any value on the right side
 Negative and zero minimum differences are impossible since values cannot compare a number larger than itself.
 
 ## Size of Problem space:
-This problem has an upper bound of n! comparisons. Each iteration compares 1 less value such that (n-1)(n-2)(n-3).... until (n-n+1).
+This problem has an upper bound of n! comparisons. Each iteration compares 1 less value such that (n-1)+(n-2)+(n-3).... until (n-n+1).
 
 ## Goal:
-Write an algorithm that is faster than O(n!) with a reasonable amount of space used.
+Write an algorithm that is faster than O(n^2) with a reasonable amount of space used.
 
 ## A naive solution in psuedo code
-### Runtime Complexity of O(n!)
+### Runtime Complexity of O(n^2)
 ### Space Complexity of O(1) if the user only needs 1 pair or less indexes 
 ```
 fn solution(arr){
