@@ -7,7 +7,7 @@ import Input from '@material-ui/core/Input';
 import MinimumDifference from './data_structures/minimum_difference'; 
 
 
-function App() {
+function App(props) {
 
   const [value, setValue] = useState('');
 
