@@ -1,26 +1,22 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Input from '@material-ui/core/Input';
-import { withStyles } from '@material-ui/core/styles';
+//import { withStyles } from '@material-ui/core/styles';
 
 import MinimumDifference from './data_structures/minimum_difference'; 
 
 
+function App() {
 
-class App extends Component {
+  const [value, setValue] = useState('');
 
-  constructor(props) {
-    super(props);
-    this.state = {value: ''};
-  }
-
-  handleOnChange = function(event) {
+  var handleOnChange = function(event) {
     console.log(event)
-    this.setState({value: event.target.value});
+    setValue(event.target.value);
   }
 
-  handleInput = function(input) {
+  var handleInput = function(input) {
     //Validate input
     
     var arr = input.split(',').map((tok) => parseInt(tok));
@@ -31,23 +27,23 @@ class App extends Component {
     else 
       return [diff, indexes];
   }
-
-  render() {
-    const output = this.handleInput(this.state.value);
+  
+  var render = function(value) {
+    const output = handleInput(value);
     const errorFlag = output.length === 0;
-    const [diff, idx] = output;
-    return (
-      <div className="App">
+    //const [diff, idx] = output;
+    const diff = output[0];
+    return (<div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
             This SPA solves minimum difference between numbers in a list
           </p>
           <Input 
-            onChange={this.handleOnChange.bind(this)}
+            onChange={handleOnChange}
             variant="outlined"
             autoFocus
-            placeholder="Please enter numbers seperated by commas only"
+            placeholder="Please enter numbers separated by commas only"
             inputProps={{ style: {  
               background: 'white', 
               width: '600px', display: 'flex',
@@ -69,6 +65,7 @@ class App extends Component {
       </div>
     );
   }
+  return render(value);
 }
 
 export default App;

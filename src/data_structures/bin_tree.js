@@ -1,5 +1,3 @@
-"use strict";
-
 function Node( val, idx ) {
    this.value = val;
    this.indexList = [idx];
@@ -13,13 +11,13 @@ Node.prototype.getValue = function(){
 //Iterator next
 Node.prototype.next = function(){
   if( this.right ){
-    var n = this.right;
+    let n = this.right;
     while(n.left) {
       n = n.left;
     }
     return n;
   } else {
-    var n = this.parent;
+    let n = this.parent;
     while(n){
       if( this.value < n.value){
         break;
@@ -32,13 +30,13 @@ Node.prototype.next = function(){
 //Reverse Iterator
 Node.prototype.rnext = function(){
   if( this.left ){
-    var n = this.left;
+    let n = this.left;
     while(n.right) {
       n = n.right;
     }
     return n;
   } else {
-    var n = this.parent;
+    let n = this.parent;
     while(n){
       if( this.value > n.value){
         break;

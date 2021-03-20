@@ -1,4 +1,3 @@
-"use strict";
 if ( typeof require === "function"){
    var BinaryTree = require('./bin_tree.js').BinarySearchTree;
 }
@@ -8,15 +7,15 @@ function minimumDifference(arr)  {
     var smallest = Number.MAX_SAFE_INTEGER;
     var indexes = [];
     BST.insert(arr[arr.length-1], arr.length-1)
-	for(var i = arr.length-1; i != 0; i--){
-        var idx = i-1;
-        var n = BST.insert(arr[idx], idx);
-        var neighbor = n.rnext();
+	for(let i = arr.length-1; i !== 0; i--){
+        let idx = i-1;
+        let n = BST.insert(arr[idx], idx);
+        let neighbor = n.rnext();
         
         if( neighbor) {
             if(smallest > ( n.getValue() - neighbor.getValue())){
-                smallest = n.getValue() - neighbor.getValue()
-                indexes = neighbor.getIndexes().map(( value ) => (idx, value))
+                smallest = n.getValue() - neighbor.getValue();
+                indexes = neighbor.getIndexes().map(( value ) => [idx, value]);
             }
         }
     }
